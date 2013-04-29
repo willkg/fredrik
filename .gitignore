@@ -1,0 +1,6 @@
+*~
+*.swp
+*.py[co]
+
+docs/_build
+fredrik.egg-info
