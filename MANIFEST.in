@@ -1,0 +1,14 @@
+include CONTRIBUTORS
+include LICENSE
+include CHANGELOG
+include README.rst
+include MANIFEST.in
+
+# cmd
+include bin/fredrik-cmd
+
+# project-template
+recursive-include fredrik/project-template *.py *.js *.css *.txt *.py-dist *.rst LICENSE CONTRIBUTORS README.rst
+
+# docs
+recursive-include docs *.py *.rst Makefile
