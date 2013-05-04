@@ -49,5 +49,7 @@ Contents
 .. toctree::
    :maxdepth: 1
 
+   changelog
+   license
    project_layout
    hacking

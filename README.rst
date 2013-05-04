@@ -1,6 +1,6 @@
-======
-README
-======
+=======
+Read me
+=======
 
 Command line for generating Flask app scaffolding suitable for
 fast-and-furious hack-days.
