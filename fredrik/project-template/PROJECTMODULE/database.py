@@ -6,6 +6,12 @@ from sqlalchemy.ext.declarative import declarative_base
 Model = declarative_base(name='Model')
 
 
+def create_all(app):
+    engine = create_engine(
+        app.config.get('DATABASE_URL'), convert_unicode=True)
+    Model.metadata.create_all(bind=engine)
+
+
 def get_session(app):
     if not hasattr(app, 'db_session'):
         # Create the engine

@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, redirect
 
 
 # Create the app
@@ -30,13 +30,9 @@ def teardown_request(exception=None):
     if hasattr(app, 'db_session'):
         app.db_session.close()
 
-# Special rule for old browsers to correctly handle favicon.
-app.add_url_rule(
-    '/favicon.ico', redirect_to=url_for('static', filename='favicon.ico'))
-
 
 # Import models here
-from PROJECT_MODULE.models import Sample
+from PROJECTMODULE.models import Sample
 
 
 # Views go below this line
@@ -45,3 +41,7 @@ from PROJECT_MODULE.models import Sample
 def index():
     return render_template('index.html')
 
+# Special rule for old browsers to correctly handle favicon.
+@app.route('/favicon.ico')
+def favicon():
+    return redirect(url_for('static', filename='favicon.ico'))    
