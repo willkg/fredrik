@@ -1,6 +1,7 @@
 import os
 
-from flask import Flask, render_template, url_for, redirect
+from flask import (Flask, render_template, url_for, redirect,
+                   send_from_directory)
 
 
 # Create the app
@@ -44,4 +45,5 @@ def index():
 # Special rule for old browsers to correctly handle favicon.
 @app.route('/favicon.ico')
 def favicon():
-    return redirect(url_for('static', filename='favicon.ico'))    
+    return send_from_directory(os.path.join(app.root_path, 'static'),
+                               'favicon.ico', mimetype='image/vnd.microsoft.icon')
