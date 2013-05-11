@@ -1,16 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <title>{% block title %}{% endblock title %}</title>
-  <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+  <link href="{{ url_for('favicon') }}" rel="shortcut icon">
+{% block css %}
   <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet" media="screen">
   <link href="{{ url_for('static', filename='css/PROJECTMODULE.css') }}" rel="stylesheet" media="screen">
-  <script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
-  <script src="{{ url_for('static', filename='js/PROJECTMODULE.js') }}"></script>
+{% endblock css %}
 </head>
 <body>
+<div class="container">
+  <div class="navbar">
+    <div class="navbar-inner">
+      <a class="brand" href="#">Hack ProjectTitle</a>
+      <ul class="nav">
+        <li class="active"><a href="{{ url_for('index') }}">Home</a></li>
+      </ul>
+    </div>
+  </div>
+
 {% block content %}
 {% endblock content %}
+</div>
+
+{% block js %}
+<script src="{{ url_for('static', filename='js/jquery.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/bootstrap.min.js') }}"></script>
+<script src="{{ url_for('static', filename='js/PROJECTMODULE.js') }}"></script>
+{% endblock js %}
 </body>
 </html>
