@@ -48,19 +48,30 @@ def err(s):
 
 def create(command, argv):
     parser = build_parser('%prog create <PROJECTNAME>')
-    (options, args) = parser.parse_args()
+    parser.add_option(
+        '--noinput',
+        action='store_true',
+        default=False,
+        help='runs fredrik without requiring input')
 
-    if not argv:
+    (options, args) = parser.parse_args(argv)
+
+    if not args:
         err('ERROR: You must provide a project name.')
         return 1
 
-    project_name = args[1]
+    project_name = args[0]
     project_module = clean_project_module(project_name)
 
-    # Ask them for project module name and then double-check it's
-    # valid.
-    new_project_module = raw_input(
-        'Python module name for your project: [{0}] '.format(project_module))
+    if not options.noinput:
+        # Ask them for project module name and then double-check it's
+        # valid.
+        new_project_module = raw_input(
+            'Python module name for your project: [{0}] '.format(
+                project_module))
+    else:
+        new_project_module = project_module
+
     new_project_module = new_project_module.strip()
     if not new_project_module:
         new_project_module = project_module
