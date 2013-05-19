@@ -5,6 +5,10 @@ README
 Summary
 =======
 
+This is a project we hacked together.
+
+The code is distributed under XXX. See LICENSE file for more details.
+
 
 Install and configure
 =====================
@@ -42,3 +46,13 @@ Run tests
 Run::
 
     $ nosetests
+
+
+Locations of things
+===================
+
+:Project settings: ``PROJECTMODULE/settings.py`` and ``PROJECTMODULE/settings_local.py-dist``
+:View code:        ``PROJECTMODULE/view.py``
+:Database models:  ``PROJECTMODULE/models.py``
+:Templates:        ``PROJECTMODULE/templates/``
+:Static assets:    ``PROJECTMODULE/static/``

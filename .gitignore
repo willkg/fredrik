@@ -4,3 +4,4 @@
 
 docs/_build
 fredrik.egg-info
+dist/

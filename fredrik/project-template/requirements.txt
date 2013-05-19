@@ -1,4 +1,7 @@
+# Flask webapp scaffolding
 Flask==0.9
 Flask-Script==0.5.3
-nose==1.2.1
-SQLAlchemy==0.7.10
+SQLAlchemy==0.8.1
+
+# For tests
+nose
