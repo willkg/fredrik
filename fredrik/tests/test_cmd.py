@@ -30,7 +30,7 @@ class TestFredrikCmd(TestCase):
 class TestUtilities(TestCase):
     def test_clean_project_module(self):
         """clean_project_module should generate valid Python module names"""
-        for s, e in [
+        tests = [
             ('foo', 'foo'),
             ('Foo', 'foo'),
             ('Foo Foo', 'foofoo'),
@@ -39,6 +39,7 @@ class TestUtilities(TestCase):
             ('8675309', 'eight675309'),
             ('asdf!@#$%^&*()_+', 'asdf'),
             ('asdf\xde\xb4', 'asdf')
-            ]:
+        ]
 
-            eq_(clean_project_module(s), e)
+        for text, expected in tests:
+            eq_(clean_project_module(text), expected)

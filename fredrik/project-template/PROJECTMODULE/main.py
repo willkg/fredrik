@@ -18,10 +18,12 @@ else:
 from PROJECTMODULE.errors import register_error_handlers
 register_error_handlers(app)
 
+
 # Add the config to the context, so it's available in templates
 @app.context_processor
 def context_processor():
     return dict(config=app.config)
+
 
 # Nix the db when tearing down
 @app.teardown_request
@@ -40,6 +42,7 @@ from PROJECTMODULE.models import Sample
 @app.route('/')
 def index():
     return render_template('index.html')
+
 
 # Special rule for old browsers to correctly handle favicon.
 @app.route('/favicon.ico')

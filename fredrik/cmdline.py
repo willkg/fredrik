@@ -81,7 +81,7 @@ def create(command, argv):
             'ERROR: "{0}" is not a valid Python module name.'.format(
                 new_project_module))
         return 1
-    
+
     project_module = new_project_module
     project_dir = os.path.abspath(project_module)
 
@@ -100,7 +100,7 @@ def create(command, argv):
                                         'project-template')
 
     for root, dirs, files in os.walk(project_template_dir):
-        rel_root = root[len(project_template_dir)+1:]
+        rel_root = root[len(project_template_dir) + 1:]
 
         for f in files:
             source = os.path.join(root, f)
