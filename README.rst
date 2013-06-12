@@ -5,10 +5,10 @@ Read me
 Command line for generating Flask app scaffolding suitable for
 fast-and-furious hack-days.
 
-:code:          https://github.com/willkg/fredrik/
-:issues:        https://github.com/willkg/fredrik/issues
-:license:       BSD 3-clause
-:documentation: http://fredrik.rtfd.org/
+:Code:          https://github.com/willkg/fredrik/
+:Issues:        https://github.com/willkg/fredrik/issues
+:License:       BSD 3-clause
+:Documentation: http://fredrik.rtfd.org/
 
 
 Install
