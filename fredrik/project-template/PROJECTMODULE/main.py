@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, send_from_directory, session, g
+from flask import Flask, send_from_directory
 
 
 # Create the app
@@ -18,6 +18,10 @@ else:
 from PROJECTMODULE.errors import register_error_handlers
 register_error_handlers(app)
 
+# Register views
+from PROJECTMODULE import views
+app.register_blueprint(views.mod)
+
 
 # Add the config to the context, so it's available in templates
 @app.context_processor
@@ -31,18 +35,6 @@ def teardown_request(exception=None):
     # Remove the database session if it exists
     if hasattr(app, 'db_session'):
         app.db_session.close()
-
-
-# ----------------------------------------------------------
-# Your code goes below this line
-# ----------------------------------------------------------
-
-from PROJECTMODULE.models import Sample
-
-
-@app.route('/')
-def index():
-    return render_template('index.html')
 
 
 # Special rule for old browsers to correctly handle favicon.
