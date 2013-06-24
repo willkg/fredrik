@@ -2,6 +2,10 @@
 Hacking on Fredrik
 ==================
 
+This chapter covers hacking on fredrik---not hacking on projects
+created with fredrik.
+
+
 Hack!
 =====
 

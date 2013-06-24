@@ -21,8 +21,7 @@ Install and configure
 
 3. Read through the settings in ``PROJECTMODULE/settings_local.py``
 
-   TODO: If there are any settings that need to be changed, mention
-   that here.
+   TODO: Document settings that need to be set here.
 
 4. Create the database::
 

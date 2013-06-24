@@ -13,6 +13,7 @@ DATABASE = os.environ.get('DATABASE_URL', 'sqlite:///PROJECTMODULE_app.db')
 
 # Set the SECRET_KEY in your settings_local.py file.
 
+# TODO: Add project settings here..
 
 # This imports settings_local.py thus everything in that file
 # overrides what's in this file.

@@ -36,7 +36,7 @@ Run
 
 To create a Flask project using fredrik::
 
-    $ fredrik-cmd createproject <PROJECTNAME>
+    $ fredrik-cmd create <PROJECTNAME>
 
 
 That will create the project directory with all the files for the skeleton

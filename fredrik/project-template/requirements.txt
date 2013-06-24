@@ -3,5 +3,7 @@ Flask==0.9
 Flask-Script==0.5.3
 SQLAlchemy==0.8.1
 
+# TODO: add additional requirements for your project here
+
 # For tests
 nose

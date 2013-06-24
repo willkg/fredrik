@@ -28,7 +28,7 @@ Run::
 After you install it, you can use Fredrik to create new Flask-based
 projects::
 
-    fredrik-cmd createproject <PROJECTNAME>
+    fredrik-cmd create <PROJECTNAME>
 
 It'll create the project skeleton in the current working directory. You
 can run your project immediately::
@@ -42,14 +42,39 @@ Open browser and view ``http://127.0.0.1:5000/``.
 
 Now you have a project skeleton for your new project!
 
+Oh, but wait---wtf do you do now?
+
+1. Read, skim or vaguely flip through these docs which cover the
+   project layout and neato things like that!
+2. Read your new project README.rst.
+3. Run::
+
+       fredrik-cmd todo
+
+   which lists all the TODO items in your project.
+
 
 Contents
 ========
+
+Documentation for Fredrik:
 
 .. toctree::
    :maxdepth: 1
 
    changelog
    license
-   project_layout
    hacking
+
+Documentation for projects created with Fredrik:
+
+.. toctree::
+   :maxdepth: 1
+
+   fredrik_intro
+   fredrik_layout
+   fredrik_configuration
+   fredrik_views
+   fredrik_db
+   fredrik_templates
+   fredrik_static

@@ -46,6 +46,47 @@ def err(s):
     sys.stderr.write(s + '\n')
 
 
+def todo(command, argv):
+    parser = build_parser('%prog todo')
+
+    (options, args) = parser.parse_args(argv)
+
+    # TODO: Add the fact you can specify a directory to the help.
+
+    if len(args) > 0:
+        project_dir = args[0]
+    else:
+        project_dir = '.'
+
+    project_dir = os.path.abspath(project_dir)
+
+    # Go through all the text files (.txt, .rst, .py, .js, ...)
+    # and print out TODO lines.
+    for root, dirs, files in os.walk(project_dir):
+        for fn in files:
+            fn = os.path.join(root, fn)
+
+            if not fn.endswith(('.rst', '.txt', '.js', '.css', '.py')):
+                continue
+
+            fp = open(fn, 'r')
+            lines = fp.readlines()
+            fp.close()
+
+            output = []
+
+            for i, line in enumerate(lines):
+                if 'TODO' not in line:
+                    continue
+
+                output.append('{0}: {1}'.format(i + 1, line.strip()))
+
+            if output:
+                print ''
+                print fn
+                print '\n'.join(output)
+
+
 def create(command, argv):
     parser = build_parser('%prog create <PROJECTNAME>')
     parser.add_option(
@@ -123,11 +164,23 @@ def create(command, argv):
             print 'create file: {0}'.format(dest)
 
     print 'Done!'
+    print ''
+    print 'Gah! What next?'
+    print ''
+    print 'There are a series of TODO lines in the code. You can do:'
+    print ''
+    print 'fredrik-cmd todo'
+    print ''
+    print 'to list them. You should skim the Fredrik docs including'
+    print 'project layout at:'
+    print ''
+    print 'http://fredrik.readthedocs.org/en/latest/'
     return 0
 
 
 HANDLERS = (
     ('create', create, 'Creates a new fredrik project.'),
+    ('todo', todo, 'Lists todo items in a fredrik project.'),
     )
 
 

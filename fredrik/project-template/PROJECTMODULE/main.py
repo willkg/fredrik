@@ -1,6 +1,6 @@
 import os
 
-from flask import Flask, render_template, send_from_directory
+from flask import Flask, render_template, send_from_directory, session, g
 
 
 # Create the app
@@ -33,11 +33,12 @@ def teardown_request(exception=None):
         app.db_session.close()
 
 
-# Import models here
+# ----------------------------------------------------------
+# Your code goes below this line
+# ----------------------------------------------------------
+
 from PROJECTMODULE.models import Sample
 
-
-# Views go below this line
 
 @app.route('/')
 def index():
