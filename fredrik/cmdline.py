@@ -118,8 +118,7 @@ def create(command, argv):
         new_project_module = project_module
 
     if new_project_module != clean_project_module(new_project_module):
-        err(
-            'ERROR: "{0}" is not a valid Python module name.'.format(
+        err('ERROR: "{0}" is not a valid Python module name.'.format(
                 new_project_module))
         return 1
 
@@ -127,8 +126,7 @@ def create(command, argv):
     project_dir = os.path.abspath(project_module)
 
     if os.path.exists(project_dir):
-        err(
-            'ERROR: Cannot create "{0}"--something is in the way.'.format(
+        err('ERROR: Cannot create "{0}"--something is in the way.'.format(
                 project_dir))
         return 1
 
@@ -169,12 +167,14 @@ def create(command, argv):
     print ''
     print 'There are a series of TODO lines in the code. You can do:'
     print ''
-    print 'fredrik-cmd todo'
+    print '    fredrik-cmd todo'
     print ''
     print 'to list them. You should skim the Fredrik docs including'
     print 'project layout at:'
     print ''
-    print 'http://fredrik.readthedocs.org/en/latest/'
+    print '    http://fredrik.readthedocs.org/en/latest/'
+    print ''
+    print 'Good luck!'
     return 0
 
 
@@ -191,12 +191,12 @@ def cmdline_handler(scriptname, argv):
     handlers = HANDLERS
 
     if not argv or '-h' in argv or '--help' in argv:
-        parser = build_parser("%prog [command]")
+        parser = build_parser('%prog [command]')
         parser.print_help()
         print ''
         print 'Commands:'
-        for command_str, _, command_help in handlers:
-            print '    %-14s %s' % (command_str, command_help)
+        for cmd, _, hlp in handlers:
+            print '  %-14s %s' % (cmd, hlp)
         return 0
 
     if '--version' in argv:
@@ -210,5 +210,5 @@ def cmdline_handler(scriptname, argv):
 
     err('Command "{0}" does not exist.'.format(command))
     for cmd, fun, hlp in handlers:
-        err('    %-14s %s' % (cmd, hlp))
+        err('  %-14s %s' % (cmd, hlp))
     return 1
