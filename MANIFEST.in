@@ -3,12 +3,14 @@ include LICENSE
 include CHANGELOG
 include README.rst
 include MANIFEST.in
+include requirements-dev.txt
+include nose.cfg
 
 # cmd
 include bin/fredrik-cmd
 
 # project-template
-recursive-include fredrik/project-template *.py *.js *.css *.png *.ico *.txt *.py-dist *.rst LICENSE CONTRIBUTORS README.rst
+recursive-include fredrik/project-template *.py *.js *.css *.png *.ico *.txt *.py-dist *.rst LICENSE CONTRIBUTORS README.rst *.html
 
 # docs
 recursive-include docs *.py *.rst Makefile
