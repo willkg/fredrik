@@ -11,6 +11,15 @@ fast-and-furious hack-days.
 :Documentation: http://fredrik.rtfd.org/
 
 
+Status
+======
+
+There are better Flask project templates and this one suffers from poor
+decisions.
+
+Ergo, this project is dead for now.
+
+
 Install
 =======
 
